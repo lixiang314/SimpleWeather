@@ -4,11 +4,17 @@
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Untitled</title>
+        <title>简天气</title>
         <link rel="stylesheet" href="css/index.css">
     </head>
-    <body>
-
+    <body ms-controller="page">
+        <div class="form-inoput-city"></div>
+        <input type="text" value="" name="input-city-name">
+        <button id="btn-ok">确认</button>
+        <p ms-text="result.basic.city"></p>
+        <script src="js/jquery-1.10.1.min.js"></script>
+        <script src="js/jquery.cookie.min.js"></script>
+        <script src="js/avalon.min.js"></script>
         <script src="js/index.js"></script>
     </body>
 </html>
