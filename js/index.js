@@ -9,6 +9,36 @@ $(document).ready(function() {
 
 
 avalon.ready(function() {
+	avalon.filters.timeFilter = function(str){
+		var timeArr = str.split(" ");
+		return  timeArr[1];
+	}
+
+	avalon.filters.tmpFilter = function(str){
+		var tmp = Number(str);
+		var tmpLevel ='l-c';
+
+		if(tmp>=30){
+			tmpLevel = 'l-a';
+		}
+		else if(tmp>=20){
+			tmpLevel = 'l-b';
+		}
+		else if(tmp>=15){
+			tmpLevel = 'l-c';
+		}
+		else if(tmp>=10){
+			tmpLevel = 'l-d';
+		}
+		else if(tmp>=0){
+			tmpLevel = 'l-e';
+		}
+		else{
+			tmpLevel = 'l-f';
+		}
+		return  tmpLevel;
+	}
+
 	vmodel = avalon.define("page", function(vm) {
 		vm.result= {};
 	});

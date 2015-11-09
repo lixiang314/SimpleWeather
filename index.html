@@ -25,11 +25,46 @@
                 <p ms-text="result.basic.city"></p>
             </div>
             <div class="info-base">
-                 <p ms-text="result.now.cond.txt" class="base-cond"></p>
-                 <p ms-text="result.now.tmp+'°'" class="base-tmp"></p>
+                 <div class="bg-gradient-base"></div>
+                 <div class="info-base-left">
+                    <p ms-text="result.now.cond.txt" class="base-cond"></p>
+                    <p ms-text="result.now.tmp+'°'" class="base-tmp"></p>
+                 </div>
+                 <div class="info-base-center">
+                     <p>湿度</p>
+                     <p>气压</p>
+                     <p>降水量</p>
+                     <p>PM2.5</p>
+                 </div>
+                 <div class="info-base-right">
+                     <p ms-text="result.now.hum+'%'"></p>
+                     <p ms-text="result.now.pres"></p>
+                     <p ms-text="result.now.pcpn+'mm'"></p>
+                     <p ms-text="result.aqi.city.pm25+'('+result.aqi.city.qlty+')'"></p>
+                 </div>
             </div>
 
+
+
             <div class="info-detail">
+                <div class="info-detail-hourly detail-section">
+                    <p class="section-title">今日预报 (每3小时)</p>
+                    <hr>
+                    <table>
+                         <tr>
+                            <td>时间</td>
+                            <td>温度</td>
+                            <td>降水概率</td>
+                            <td>风力</td>
+                        </tr>
+                        <tr ms-repeat="result.hourly_forecast">
+                            <td ms-text="el.date | timeFilter"></td>
+                            <td ms-text="el.tmp+'°'"></td>
+                            <td ms-text="el.pop+'%'"></td>
+                            <td ms-text="el.wind.sc"></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
 
 
