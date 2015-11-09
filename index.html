@@ -13,14 +13,29 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body ms-controller="page">
+    <div class="backimg"></div>
     <div class="container">
         <div class="form-inoput-city">
             <input type="text" value="" name="input-city-name" placeholder="请输入城市名">
             <button id="btn-ok">确认</button>
         </div>
+        <div class="div-allinfo">
+            <div class="info-top">
+                <p ms-text="result.basic.update.loc"></p>
+                <p ms-text="result.basic.city"></p>
+            </div>
+            <div class="info-base">
+                 <p ms-text="result.now.cond.txt" class="base-cond"></p>
+                 <p ms-text="result.now.tmp+'°'" class="base-tmp"></p>
+            </div>
 
-        <p ms-text="result.basic.city"></p>
-        <p ms-text="result.now.cond.txt"></p>
+            <div class="info-detail">
+            </div>
+
+
+
+        </div>
+
     </div>
 
     <script src="js/jquery-1.10.1.min.js"></script>
