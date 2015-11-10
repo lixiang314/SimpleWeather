@@ -172,5 +172,15 @@ body {
 	color: #3e97d1;
 }
 
+.blur {
+    filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+
+/*    -webkit-filter: blur(20px);
+       -moz-filter: blur(20px);
+        -ms-filter: blur(20px);
+            filter: blur(20px);*/
+
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+}
 
 

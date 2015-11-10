@@ -57,14 +57,26 @@ avalon.ready(function() {
 		});
 	}
 
-
 	if(cityname!=null){
 		getInfo(cityname);
 	}
 
-
-
 });
+
+
+
+
+$(document).ready(function(){
+	var wh = $(window).height();
+  $(document).on('scroll',function() {
+  	var sh = $(document).scrollTop();
+    // $(".sh").text(sh);
+    var blur_px = sh/wh*20;
+    $('.blur').css('-webkit-filter','blur('+blur_px+'px)');
+  });
+});
+
+
 
 function getInfo(city) {
 	$.ajax({

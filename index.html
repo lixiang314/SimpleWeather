@@ -13,12 +13,14 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body ms-controller="page">
-    <div class="backimg"></div>
+    <div class="backimg blur"></div>
     <div class="container">
         <div class="form-inoput-city">
             <input type="text" value="" name="input-city-name" placeholder="请输入城市名">
             <button id="btn-ok">确认</button>
         </div>
+
+
         <div class="div-allinfo">
             <div class="info-top">
                 <p ms-text="result.basic.update.loc"></p>
@@ -47,6 +49,7 @@
 
 
             <div class="info-detail">
+
                 <div class="info-detail-hourly detail-section">
                     <p class="section-title">今日预报 (每3小时)</p>
                     <hr>
@@ -65,6 +68,45 @@
                         </tr>
                     </table>
                 </div>
+
+                <div class="info-detail-hourly detail-section">
+                    <p class="section-title">今日预报 (每3小时)</p>
+                    <hr>
+                    <table>
+                         <tr>
+                            <td>时间</td>
+                            <td>温度</td>
+                            <td>降水概率</td>
+                            <td>风力</td>
+                        </tr>
+                        <tr ms-repeat="result.hourly_forecast">
+                            <td ms-text="el.date | timeFilter"></td>
+                            <td ms-text="el.tmp+'°'"></td>
+                            <td ms-text="el.pop+'%'"></td>
+                            <td ms-text="el.wind.sc"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-detail-hourly detail-section">
+                    <p class="section-title">今日预报 (每3小时)</p>
+                    <hr>
+                    <table>
+                         <tr>
+                            <td>时间</td>
+                            <td>温度</td>
+                            <td>降水概率</td>
+                            <td>风力</td>
+                        </tr>
+                        <tr ms-repeat="result.hourly_forecast">
+                            <td ms-text="el.date | timeFilter"></td>
+                            <td ms-text="el.tmp+'°'"></td>
+                            <td ms-text="el.pop+'%'"></td>
+                            <td ms-text="el.wind.sc"></td>
+                        </tr>
+                    </table>
+                </div>
+
             </div>
 
 
