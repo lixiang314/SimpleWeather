@@ -1,6 +1,14 @@
 // var cityname = $.cookie('CITY_NAME');
-var cityname = "hangzhou"
-
+var cityname = "hangzhou";
+var weekMap = {
+		'0':'周日',
+		'1':'周一',
+		'2':'周二',
+		'3':'周三',
+		'4':'周四',
+		'5':'周五',
+		'6':'周六',
+	};
 
 $(document).ready(function() {
 	// checkCookie();
@@ -14,30 +22,12 @@ avalon.ready(function() {
 		return  timeArr[1];
 	}
 
-	avalon.filters.tmpFilter = function(str){
-		var tmp = Number(str);
-		var tmpLevel ='l-c';
-
-		if(tmp>=30){
-			tmpLevel = 'l-a';
-		}
-		else if(tmp>=20){
-			tmpLevel = 'l-b';
-		}
-		else if(tmp>=15){
-			tmpLevel = 'l-c';
-		}
-		else if(tmp>=10){
-			tmpLevel = 'l-d';
-		}
-		else if(tmp>=0){
-			tmpLevel = 'l-e';
-		}
-		else{
-			tmpLevel = 'l-f';
-		}
-		return  tmpLevel;
+	avalon.filters.weekFilter = function(str){
+		var DateArr = str.split("-");
+		var thisdate = new Date(DateArr[0],DateArr[1]-1,DateArr[2])
+		return weekMap[thisdate.getDay()];
 	}
+
 
 	vmodel = avalon.define("page", function(vm) {
 		vm.result= {};
@@ -72,7 +62,7 @@ $(document).ready(function(){
 	$(document).on('scroll',function() {
 		var sh = $(document).scrollTop();
     	// $(".sh").text(sh);
-	    var blur_px = sh/wh*20;
+	    var blur_px = parseInt(sh/wh*20);
 	    $('.blur').css('-webkit-filter','blur('+blur_px+'px)');
 	    $('.blur').css('-moz-filter','blur('+blur_px+'px)');
 	    $('.blur').css('-ms-filter','blur('+blur_px+'px)');
@@ -89,10 +79,17 @@ $(window).load(function(){
 		$(this).css('width',popArr[i]+'%');
 	});
 
+	// 风向图标
 	var windArr = $('.wind-deg').text().split('-');
 	$('.wind-point').each(function(i,e){
 		$(this).css('-webkit-transform','rotate('+windArr[i]+'deg)');
-	})
+	});
+
+	var dailywindArr = $('.daily-wind-deg').text().split('-');
+	$('.daily-wind-point').each(function(j,e0){
+		$(this).show().css('-webkit-transform','rotate('+dailywindArr[j]+'deg)');
+	});
+
 })
 
 
@@ -118,4 +115,6 @@ function getInfo(city) {
 		}
 	});
 }
+
+
 

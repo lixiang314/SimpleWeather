@@ -142,11 +142,20 @@ body {
 	width: 92%;
 	padding: 2%;
 	/*height: 5rem;*/
-	margin: 2%;
+	margin: 0 2% 2% 2%;
 	background-color: rgba(0,0,0,0.4);
+	position: relative;
+}
+.section-title-block {
+	width: 92%;
+	padding: 2%;
+	margin: 2% 2% 0 2%;
+	background-color: rgba(0,0,0,0.4);
+	color: rgba(255,255,255,0.7)
 }
 .section-title {
 	line-height: 1.5rem;
+
 }
 .info-detail-hourly table{
 	font-size: 0.9rem;
@@ -179,29 +188,70 @@ body {
 	position: relative;
 }
 .wind-point {
-	display: inline-block;
 	position: absolute;
 	left: 0;
 	top:10%;
 	height: 80%;
+
+}
+
+
+.info-detail-daily {
+	height: auto;
+	overflow: auto;
+	line-height: 1.5rem;
+
+}
+.parent-daily {
+	margin-top: 0.5rem;
+	width: 160%;
+	white-space:nowrap;
+}
+.daily-block {
+	width: 14%;
+	/*height: 10rem;*/
+
+	/*margin-right:2%;*/
+	background-color: rgba(255,255,255,0.1);
+	float: left;
+	font-size: 0.8rem;
+	text-align: center;
+
+}
+.daily-block:nth-child(odd){
+	background-color: rgba(0,0,0,0);
+}
+
+.daily-weekday {
+
+	text-align: center;
+}
+.img-cond {
+	width: 60%;
+	margin: 0 20%;
+}
+.daily-tmp {
+	margin: 1rem 0;
+	font-size: 1rem;
+}
+.daily-tmp-max {
+	color:#ffc684;
+}
+.daily-tmp-min {
+	color:#a9e5ff;
+}
+
+.block-cond-icon {
+	height: 4rem;
+	margin: 0.5rem 0;
+}
+.daily-wind-point {
+	display: inline-block;
+	width: 40%;
+	margin: 2.5rem 30% 0 30%;
 	/*height: 1.8rem;*/
 
 }
-.wind-point{
-	height: 80%;
-}
-.info-detail-daily {
-}
-.daily-block {
-	width: 25%;
-	height: 10rem;
-	background-color: rgba(0,0,0,0.5);
-	float: left;
-}
-
-
-
-
 
 
 
