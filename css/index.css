@@ -135,7 +135,7 @@ body {
 
 .info-detail {
 	width: 100%;
-	padding: 1rem 0 0 0;
+	padding: 1rem 0 1% 0;
 	background-color: rgba(0,0,0,0.3);
 }
 .detail-section {
@@ -151,9 +151,64 @@ body {
 .info-detail-hourly table{
 	font-size: 0.9rem;
 	width: 100%;
-	line-height: 1.8rem;
+	line-height: 2rem;
+	border: none;
+	border-spacing:0;
 }
-.l-a {
+
+.pop-td {
+	position: relative;
+}
+.pop-num {
+	position: absolute;
+	left: 0;
+	top:0;
+	z-index: 2;
+	color: #dff;
+}
+.pop-chart {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top:10%;
+	height: 80%;
+	background-color: rgba(95,143,205,0.4);
+	z-index: 1;
+}
+.wind-td {
+	position: relative;
+}
+.wind-point {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top:10%;
+	height: 80%;
+	/*height: 1.8rem;*/
+
+}
+.wind-point{
+	height: 80%;
+}
+.info-detail-daily {
+}
+.daily-block {
+	width: 25%;
+	height: 10rem;
+	background-color: rgba(0,0,0,0.5);
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+/*.l-a {
 	color: #ff7400;
 }
 .l-b {
@@ -170,7 +225,7 @@ body {
 }
 .l-f {
 	color: #3e97d1;
-}
+}*/
 
 .blur {
     filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
@@ -182,5 +237,9 @@ body {
 
     filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
 }
+.hide {
+	display: none;
+}
+
 
 

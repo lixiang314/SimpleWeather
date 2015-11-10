@@ -67,15 +67,33 @@ avalon.ready(function() {
 
 
 $(document).ready(function(){
+	//滚动模糊
 	var wh = $(window).height();
-  $(document).on('scroll',function() {
-  	var sh = $(document).scrollTop();
-    // $(".sh").text(sh);
-    var blur_px = sh/wh*20;
-    $('.blur').css('-webkit-filter','blur('+blur_px+'px)');
-  });
+	$(document).on('scroll',function() {
+		var sh = $(document).scrollTop();
+    	// $(".sh").text(sh);
+	    var blur_px = sh/wh*20;
+	    $('.blur').css('-webkit-filter','blur('+blur_px+'px)');
+	    $('.blur').css('-moz-filter','blur('+blur_px+'px)');
+	    $('.blur').css('-ms-filter','blur('+blur_px+'px)');
+	    $('.blur').css('filter','blur('+blur_px+'px)');
+	});
 });
 
+
+$(window).load(function(){
+
+	//降水概率图表
+	var popArr = $('.pop-num').text().split('%');
+	$('.pop-chart').each(function(i,e){
+		$(this).css('width',popArr[i]+'%');
+	});
+
+	var windArr = $('.wind-deg').text().split('-');
+	$('.wind-point').each(function(i,e){
+		$(this).css('-webkit-transform','rotate('+windArr[i]+'deg)');
+	})
+})
 
 
 function getInfo(city) {
