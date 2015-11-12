@@ -123,20 +123,20 @@ body {
 	position: absolute;
 	bottom:0;
 
-    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 20%, rgba(0,0,0,0.3) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.3)));
-    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 20%,rgba(0,0,0,0.3) 100%);
-    background: -o-linear-gradient(top,  rgba(0,0,0,0) 20%,rgba(0,0,0,0.3) 100%);
-    background: -ms-linear-gradient(top,  rgba(0,0,0,0) 20%,rgba(0,0,0,0.3) 100%);
-    background: linear-gradient(to bottom,  rgba(0,0,0,0) 20%,rgba(0,0,0,0.3) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(0,0,0,0)', endColorstr='rgba(0,0,0,0.3)',GradientType=0 );
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 20%, rgba(0,0,0,0.4) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.4)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 20%,rgba(0,0,0,0.4) 100%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,0) 20%,rgba(0,0,0,0.4) 100%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0) 20%,rgba(0,0,0,0.4) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 20%,rgba(0,0,0,0.4) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(0,0,0,0)', endColorstr='rgba(0,0,0,0.4)',GradientType=0 );
 
 }
 
 .info-detail {
 	width: 100%;
 	padding: 1rem 0 1% 0;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.4);
 }
 .detail-section {
 	width: 92%;

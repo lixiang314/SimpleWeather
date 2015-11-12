@@ -55,20 +55,35 @@ avalon.ready(function() {
 
 
 
-
+var blur_px;
+var s1 = 0;
+var s2 = 0;
+var wh = $(window).height();
 $(document).ready(function(){
 	//滚动模糊
-	var wh = $(window).height();
 	$(document).on('scroll',function() {
 		var sh = $(document).scrollTop();
-    	// $(".sh").text(sh);
-	    var blur_px = parseInt(sh/wh*20);
-	    $('.blur').css('-webkit-filter','blur('+blur_px+'px)');
-	    $('.blur').css('-moz-filter','blur('+blur_px+'px)');
-	    $('.blur').css('-ms-filter','blur('+blur_px+'px)');
-	    $('.blur').css('filter','blur('+blur_px+'px)');
+	    if(sh*2<wh){
+	    	s1 = s2;
+	    	s2 = 0;
+	    	blurpx = 0;
+	    }else {
+	    	s1 = s2;
+	    	s2 = 1;
+	    	blurpx = 10;
+	    }
+	    if(s1!=s2){
+	    	switchBlur(blurpx);
+	    }
 	});
 });
+
+function switchBlur(blurpx) {
+	$('.blur').css('-webkit-filter','blur('+blurpx+'px)');
+	$('.blur').css('-moz-filter','blur('+blurpx+'px)');
+	$('.blur').css('-ms-filter','blur('+blurpx+'px)');
+	$('.blur').css('filter','blur('+blurpx+'px)');
+}
 
 
 $(window).load(function(){
@@ -88,6 +103,9 @@ $(window).load(function(){
 	var dailywindArr = $('.daily-wind-deg').text().split('-');
 	$('.daily-wind-point').each(function(j,e0){
 		$(this).show().css('-webkit-transform','rotate('+dailywindArr[j]+'deg)');
+		$(this).show().css('-ms-transform','rotate('+dailywindArr[j]+'deg)');
+		$(this).show().css('-moz-transform','rotate('+dailywindArr[j]+'deg)');
+		$(this).show().css('-o-transform','rotate('+dailywindArr[j]+'deg)');
 	});
 
 })
