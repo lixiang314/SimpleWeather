@@ -98,6 +98,9 @@ $(window).load(function(){
 	var windArr = $('.wind-deg').text().split('-');
 	$('.wind-point').each(function(i,e){
 		$(this).css('-webkit-transform','rotate('+windArr[i]+'deg)');
+		$(this).css('-ms-transform','rotate('+windArr[i]+'deg)');
+		$(this).css('-moz-transform','rotate('+windArr[i]+'deg)');
+		$(this).css('-o-transform','rotate('+windArr[i]+'deg)');
 	});
 
 	var dailywindArr = $('.daily-wind-deg').text().split('-');
@@ -107,14 +110,22 @@ $(window).load(function(){
 		$(this).show().css('-moz-transform','rotate('+dailywindArr[j]+'deg)');
 		$(this).show().css('-o-transform','rotate('+dailywindArr[j]+'deg)');
 	});
+	$('.dashboard').css('height',$('.dashboard').width());
+	var humdeg = ($('.dashboard').attr('value') - 50)*2.4;
+	$('.dashboard-pointer').each(function(j,e0){
+		$(this).css('-webkit-transform','rotate('+humdeg+'deg)');
+		$(this).css('-ms-transform','rotate('+humdeg+'deg)');
+		$(this).css('-moz-transform','rotate('+humdeg+'deg)');
+		$(this).css('-o-transform','rotate('+humdeg+'deg)');
+	});
 
 })
 
 
 function getInfo(city) {
 	$.ajax({
-		// url : 'http://apis.baidu.com/heweather/weather/free?city='+city,
-		url : 'testData.json',
+		url : 'http://apis.baidu.com/heweather/weather/free?city='+city,
+		// url : 'testData.json',
 		dataType : 'json',
 		type : "get",
 		async : false,
@@ -125,9 +136,20 @@ function getInfo(city) {
 			if(data['HeWeather data service 3.0'][0].status=='ok'){
 				$('.form-inoput-city').fadeOut(300);
 				vmodel.result = data['HeWeather data service 3.0'][0];
+				var humNum = vmodel.result.now.hum;
+				if (humNum<40) {
+					vmodel.result.now.humtxt = "干燥";
+				}
+				else if(humNum>70){
+					vmodel.result.now.humtxt = "潮湿";
+				}
+				else {
+					vmodel.result.now.humtxt = "舒适";
+				}
+
 			}
 			else if(data['HeWeather data service 3.0'][0].status=='unknown city'){
-				alert('他妈的城市名不对');
+				alert('城市名不对');
 				$.cookie('CITY_NAME', '', { expires: -1 });
 			}
 		}
@@ -135,4 +157,17 @@ function getInfo(city) {
 }
 
 
+$.ajax({
+		url : '',
+		dataType : 'json',
+		type : "get",
+		data: JSON.stringify({
+
+		}),
+		async : false,
+		contentType : "application/json",
+		success : function(data) {
+			//TO-DO
+		}
+	});
 

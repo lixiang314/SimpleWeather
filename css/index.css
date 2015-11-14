@@ -253,7 +253,35 @@ body {
 
 }
 
+.data-source-info {
+	font-size: 0.8rem;
+    text-align: right;
+    margin: 1rem 2%;
+    color: #ccc;
+}
+.data-source-info p span{
+    color: #fff;
+}
+.info-detail-hum {
 
+	/*height: 20rem;*/
+}
+.dashboard {
+	position: relative;
+	/*height: 10rem;*/
+	width: 60%;
+}
+.dashboard-watch {
+	width: 100%;
+	position: absolute;
+	top: 0.2rem;
+}
+
+.dashboard-pointer {
+	width: 100%;
+	position: absolute;
+	top: 0.2rem;
+}
 
 
 
