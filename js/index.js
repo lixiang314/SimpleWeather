@@ -79,6 +79,7 @@ $(document).ready(function(){
 });
 
 function switchBlur(blurpx) {
+	// $('.blur').css('transform','translate3d(0px, '+ blurpx +'px, 0px);');
 	$('.blur').css('-webkit-filter','blur('+blurpx+'px)');
 	$('.blur').css('-moz-filter','blur('+blurpx+'px)');
 	$('.blur').css('-ms-filter','blur('+blurpx+'px)');
@@ -124,8 +125,8 @@ $(window).load(function(){
 
 function getInfo(city) {
 	$.ajax({
-		url : 'http://apis.baidu.com/heweather/weather/free?city='+city,
-		// url : 'testData.json',
+		// url : 'http://apis.baidu.com/heweather/weather/free?city='+city,
+		url : 'testData.json',
 		dataType : 'json',
 		type : "get",
 		async : false,
